@@ -11,10 +11,14 @@ This project is a Course Management Application that allows users to browse and 
 - [Database Schema](#database-schema)
 - [License](#license)
 
+## Live Link
+- To access the live project, Go [here](https://ine-frontend.vercel.app)
+
 ## Features
 
 - **User Authentication**: Users can register and log in to the application.
 - **Course Browsing**: Users can browse available courses without logging in.
+- **Search Functionality**: Users can search from a list of courses and the results get updated in real time.
 - **Course Enrollment**: Users need to enroll in a course to access its video content and lessons.
 
 ## Tech Stack
@@ -72,7 +76,8 @@ This project is a Course Management Application that allows users to browse and 
 
 1. **Register/Login**: Users can register a new account or log in using existing credentials.
 2. **Browse Courses**: Users can browse available courses without needing to log in or enroll.
-3. **Enroll in Courses**: Users can enroll in courses to access the detailed lessons and video content.
+3. **Search Courses**: Users can search from the list of courses to get a specific course.
+4. **Enroll in Courses**: Users can enroll in courses to access the detailed lessons and video content.
 
 ## API Endpoints
 
