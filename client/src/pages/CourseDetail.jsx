@@ -24,9 +24,7 @@ function CourseDetail () {
     const fetchCourseInfo = async () => {
       try {
         // Fetch the course details by id
-        const response = await fetch(
-          `https://ine-backend-u216.onrender.com/api/courses/${id}`
-        )
+        const response = await fetch(`http://localhost:5000/api/courses/${id}`)
         const data = await response.json()
         setCourseInfo(data)
         setCover(data.cover)
@@ -46,7 +44,7 @@ function CourseDetail () {
         if (user && loggedIn) {
           const userId = user.id
           const response = await fetch(
-            `https://ine-backend-u216.onrender.com/api/enrollments/status/${userId}/${id}`
+            `http://localhost:5000/api/enrollments/status/${userId}/${id}`
           )
           const data = await response.json()
           setEnrolled(data.enrolled)
@@ -65,7 +63,7 @@ function CourseDetail () {
       }
 
       const userId = user.id
-      await fetch('https://ine-backend-u216.onrender.com/api/enrollments', {
+      await fetch('http://localhost:5000/api/enrollments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -167,9 +165,6 @@ function CourseDetail () {
                     </div>
                   )}
                 </div>
-                {/* <Link to={`/lessons/${lesson.id}`}>
-                  <p className=' text-blue-400'>{lesson.text_content}</p>
-                </Link> */}
               </AccordionItem>
             ))}
           </Accordion>

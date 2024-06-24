@@ -30,7 +30,7 @@ export default function ModalForm ({ text }) {
     e.preventDefault()
     try {
       const response = await axios.post(
-        'https://ine-backend-u216.onrender.com/api/auth/login',
+        'http://localhost:5000/api/auth/login',
         { username, password },
         {
           headers: {
