@@ -15,7 +15,8 @@ import {
   useDisclosure,
   Checkbox,
   Input,
-  Link
+  Link,
+  Divider
 } from '@nextui-org/react'
 import { MailIcon } from './MailIcon.jsx'
 import { LockIcon } from './LockIcon.jsx'
@@ -26,6 +27,7 @@ export default function ModalForm ({ text }) {
   const dispatch = useDispatch()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [errror, setError] = useState('')
   const login = async e => {
     e.preventDefault()
     try {
@@ -59,8 +61,8 @@ export default function ModalForm ({ text }) {
         navigate('/courses') // Set redirect to true
       }
     } catch (error) {
-      console.error('Registration Error:', error)
-      toast.error('Registration failed. Please try again.', {
+      console.error('Login Error:', error)
+      toast.error('Invalid Username or password', {
         style: {
           background: '#333',
           color: '#fff'
@@ -113,6 +115,7 @@ export default function ModalForm ({ text }) {
                   Log in
                 </Button>
               </ModalFooter>
+              <Divider className='mt-4' />
               <div className='flex  gap-4 items-center justify-center py-2'>
                 Don't have an account? <RegisterForm text='Sign Up' />
               </div>
